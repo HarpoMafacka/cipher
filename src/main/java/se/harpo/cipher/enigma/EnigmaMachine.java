@@ -1,5 +1,6 @@
 package se.harpo.cipher.enigma;
 
+import se.harpo.cipher.formatting.MessageFormatter;
 import se.harpo.cipher.enigma.reflector.Reflector;
 import se.harpo.cipher.enigma.rotor.Rotor;
 
@@ -37,6 +38,20 @@ public class EnigmaMachine {
             encryptedMessage.append(input(character));
         }
         return encryptedMessage.toString();
+    }
+
+    /**
+     * Encrypt a message and format it using a message formatter.
+     * @param message the message to encrypt
+     * @param formatter format of the encrypted message
+     * @return encrypted message
+     */
+    public String input(String message, MessageFormatter formatter) {
+        StringBuilder encryptedMessage = new StringBuilder();
+        for (char character : message.toCharArray()) {
+            encryptedMessage.append(input(character));
+        }
+        return formatter.format(encryptedMessage.toString());
     }
 
     private void rotate() {
