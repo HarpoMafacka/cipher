@@ -1,5 +1,9 @@
 package se.harpo.cipher.enigma.rotor;
 
+/**
+ * A rotor is a wheel with 26 pins (one for each letter in the english alphabet) that can rotate. The rotor has internal
+ * wiring that connects each input pin with one of the 26 output pins, making it a simple substitution cipher.
+ */
 public interface Rotor {
     /**
      * Get the name of the rotor

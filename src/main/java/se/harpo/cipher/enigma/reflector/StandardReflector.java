@@ -2,6 +2,9 @@ package se.harpo.cipher.enigma.reflector;
 
 import se.harpo.cipher.SimpleSubstitutionCipher;
 
+/**
+ * An abstract standard implementation of an Enigma reflector.
+ */
 public abstract class StandardReflector implements Reflector {
     private final String name;
     private final SimpleSubstitutionCipher cipher;
@@ -13,7 +16,7 @@ public abstract class StandardReflector implements Reflector {
 
     @Override
     public String getName() {
-        return;
+        return name;
     }
 
     @Override
