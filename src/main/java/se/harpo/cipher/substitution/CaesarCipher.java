@@ -1,4 +1,4 @@
-package se.harpo.cipher;
+package se.harpo.cipher.substitution;
 
 /**
  * A Caesar cipher is a shift cipher where the key is 3. In other words, where the plain alphabet is shifted 3 steps

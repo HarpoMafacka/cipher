@@ -1,6 +1,6 @@
 package se.harpo.cipher.enigma.reflector;
 
-import se.harpo.cipher.SimpleSubstitutionCipher;
+import se.harpo.cipher.substitution.SimpleSubstitutionCipher;
 
 public class CustomReflector extends StandardReflector {
     public CustomReflector(String name, SimpleSubstitutionCipher cipher) {

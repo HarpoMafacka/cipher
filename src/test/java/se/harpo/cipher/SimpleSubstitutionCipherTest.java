@@ -1,6 +1,7 @@
 package se.harpo.cipher;
 
 import org.junit.jupiter.api.Test;
+import se.harpo.cipher.substitution.SimpleSubstitutionCipher;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

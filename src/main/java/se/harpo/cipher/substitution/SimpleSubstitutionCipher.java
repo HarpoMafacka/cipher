@@ -1,4 +1,6 @@
-package se.harpo.cipher;
+package se.harpo.cipher.substitution;
+
+import se.harpo.cipher.Cipher;
 
 import static se.harpo.algorithm.Strings.*;
 
@@ -7,7 +9,7 @@ import static se.harpo.algorithm.Strings.*;
  * a letter in a cipher alphabet from the same set of characters. The characters in the cipher alphabet may be shifted,
  * reversed or scrambled.
  */
-public class SimpleSubstitutionCipher implements Cipher, MonoalphabeticSubstituationCipher {
+public class SimpleSubstitutionCipher implements Cipher, MonoalphabeticSubstitutionCipher {
     private String plainAlphabet;
     private String cipherAlphabet;
 

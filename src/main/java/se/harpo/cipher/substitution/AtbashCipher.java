@@ -1,4 +1,4 @@
-package se.harpo.cipher;
+package se.harpo.cipher.substitution;
 
 import static se.harpo.algorithm.Strings.removeDuplicatesCharacters;
 

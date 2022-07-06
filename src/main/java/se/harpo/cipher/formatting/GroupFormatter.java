@@ -3,17 +3,29 @@ package se.harpo.cipher.formatting;
 import se.harpo.algorithm.Strings;
 import se.harpo.cipher.Alphabets;
 
+/**
+ * The group formatter removes all non-uniform characters
+ */
 public class GroupFormatter implements MessageFormatter {
     private static final int COLUMNS = 4;
+    private final String alphabet;
     private final int groupSize;
 
     public GroupFormatter() {
         this.groupSize =5;
+        this.alphabet = Alphabets.ENGLISH_ALPHABET;
     }
 
     public GroupFormatter(int groupSize) {
         this.groupSize = groupSize;
+        this.alphabet = Alphabets.ENGLISH_ALPHABET;
     }
+
+    public GroupFormatter(int groupSize, String alphabet) {
+        this.groupSize = groupSize;
+        this.alphabet = alphabet;
+    }
+    
     @Override
     public String format(String input) {
         var message = prepareInput(input);
@@ -21,7 +33,7 @@ public class GroupFormatter implements MessageFormatter {
     }
 
     private String prepareInput(String input) {
-        var conformedInput = Strings.conformCharacters(Alphabets.ENGLISH_ALPHABET, input.toUpperCase());
+        var conformedInput = Strings.conformCharacters(alphabet, input.toUpperCase());
         StringBuilder message = new StringBuilder(conformedInput);
         int padding = groupSize - (message.length() % groupSize);
         message.append("A".repeat(padding));
