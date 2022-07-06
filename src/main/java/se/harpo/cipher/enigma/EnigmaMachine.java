@@ -26,6 +26,19 @@ public class EnigmaMachine {
         return decrypt(reflected);
     }
 
+    /**
+     * Encrypt a message.
+     * @param message the message to encrypt
+     * @return encrypted message
+     */
+    public String input(String message) {
+        StringBuilder encryptedMessage = new StringBuilder();
+        for (char character : message.toCharArray()) {
+            encryptedMessage.append(input(character));
+        }
+        return encryptedMessage.toString();
+    }
+
     private void rotate() {
         for (Rotor rotor : rotors) {
             if (!rotor.rotate()) {
@@ -50,5 +63,14 @@ public class EnigmaMachine {
             character = rotors[i].decrypt(character);
         }
         return character;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder settings = new StringBuilder("Rotor positions: ");
+        for (Rotor rotor : rotors) {
+            settings.append(rotor.getPosition());
+        }
+        return settings.toString();
     }
 }
